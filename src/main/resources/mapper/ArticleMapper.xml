@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.daofeng.system.mapper.ArticleMapper">
+
+    <!--插入文章数据-->
+    <update id="updateArticle" parameterType="com.daofeng.system.entity.Article">
+        update article set
+                <if test="articleTitle != null">
+                    article_title = #{articleTitle},
+                </if>
+                <if test="coverUrl != null">
+                    author_cover = #{coverUrl},
+                </if>
+                <if test="articleTime != null">
+                    article_time = #{articleTime},
+                </if>
+                <if test="tagId != null">
+                    tag_id = #{tagId},
+               </if>
+    </update>
+</mapper>
